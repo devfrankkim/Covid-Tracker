@@ -2,10 +2,12 @@ import React from "react";
 import "./Table.css";
 
 function Table({ countries }) {
+  console.log(countries);
   return (
     <div className="table">
-      {countries.map(({ country, cases }) => (
-        <tr>
+      {countries.map(({ country, cases }, index) => (
+        <tr key={country}>
+          <td>{`#${index + 1}`}</td>
           <td>{country}</td>
           <td>
             <strong>{cases}</strong>
